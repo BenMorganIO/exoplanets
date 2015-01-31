@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: exoplanets_development
+
+test:
+  <<: *default
+  database: exoplanets_test
+
+production:
+  <<: *default
+  database: exoplanets_production
+  username: exoplanets
+  password: <%= ENV['EXOPLANETS_DATABASE_PASSWORD'] %>
