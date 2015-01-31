@@ -14,6 +14,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'httparty'
 gem 'sidekiq'
 gem 'active_model_serializers', '~> 0.8.3'
 
