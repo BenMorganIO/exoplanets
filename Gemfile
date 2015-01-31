@@ -4,8 +4,8 @@ ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 gem 'pg'
-# gem 'redis-rails'
-# gem "redis-rack-cache"
+gem 'redis-rails'
+gem "redis-rack-cache"
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -25,6 +25,6 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+# group :production do
+#   gem 'rails_12factor'
+# end
