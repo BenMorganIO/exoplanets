@@ -4,8 +4,8 @@ ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 gem 'pg'
-gem 'redis-rails'
-gem "redis-rack-cache"
+# gem 'redis-rails'
+# gem "redis-rack-cache"
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -14,9 +14,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 
-gem 'httparty'
-gem 'sidekiq'
-gem 'active_model_serializers', '~> 0.8.3'
+# gem 'httparty'
+# gem 'sidekiq'
+# gem 'active_model_serializers', '~> 0.8.3'
 
 group :development, :test do
   gem 'meta_request'
