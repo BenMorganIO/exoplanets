@@ -1,1 +1,1 @@
-web: spring rails s
+web: rails s
