@@ -14,9 +14,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 
-# gem 'httparty'
-# gem 'sidekiq'
-# gem 'active_model_serializers', '~> 0.8.3'
+gem 'httparty'
+gem 'sidekiq'
+gem 'active_model_serializers', '~> 0.8.3'
 
 group :development, :test do
   gem 'meta_request'
@@ -25,6 +25,6 @@ group :development, :test do
   gem 'spring'
 end
 
-# group :production do
-#   gem 'rails_12factor'
-# end
+group :production do
+  gem 'rails_12factor'
+end
