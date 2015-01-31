@@ -1,3 +1,3 @@
 # Exoplanets
 
-Exoplanets is an Rails + Ember application for displaying information about exoplanets.
+Exoplanets is a Rails application for displaying information about exoplanets.
