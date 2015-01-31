@@ -12,4 +12,10 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   config.active_record.dump_schema_after_migration = false
+  config.cache_store = :redis_store, "#{Rails.application.secrets.redis_url}/0",
+                       { expires_in: 5.minutes }
+  config.action_dispatch.rack_cache = {
+    metastore:   "#{Rails.application.secrets.redis_url}/0/metastore",
+    entitystore: "#{Rails.application.secrets.redis_url}/0/entitystore"
+  }
 end
