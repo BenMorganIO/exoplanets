@@ -4,6 +4,11 @@ module Api
       render json: exoplanets
     end
 
+    def show
+      exoplanet = Exoplanet.find params[:id]
+      render json: exoplanet
+    end
+
     private
 
     def exoplanets

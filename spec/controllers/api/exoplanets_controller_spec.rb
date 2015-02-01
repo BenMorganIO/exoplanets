@@ -37,4 +37,13 @@ describe Api::ExoplanetsController do
       end
     end
   end
+
+  describe 'show' do
+    subject(:exoplanet) { create :exoplanet }
+
+    it "will render the exoplanet by id" do
+      get :show, id: exoplanet.id
+      expect(response.body).to include exoplanet.to_json
+    end
+  end
 end

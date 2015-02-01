@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :api, defaults: { format: :json } do
-    resources :exoplanets, only: :index
+    resources :exoplanets, only: [:index, :show]
   end
 end
