@@ -7,34 +7,16 @@ module Archivable
 
     def self.refresh
       data = get '/nph-nstedAPI', query: { table: name.downcase.pluralize }
-      eps_array = CSV.parse(data).as_json
-
-      columns = eps_array.shift
-      rows    = eps_array
-
-      column_indexes = {}
-      columns.each_with_index do |column, index|
-        column_indexes[index] = column
-      end
-
-      exoplanets_hash = {}
-      rows.each_with_index do |row, row_index|
-        row_uuid = SecureRandom.uuid
-        exoplanet_hash = {}
-        row.each_with_index do |data, index|
-          exoplanet_hash[column_indexes[index]] = data
-        end
-        exoplanets_hash[row_uuid] = exoplanet_hash
-      end
-
-      true if save_data exoplanets_hash
+      csv = CSV.new(data, headers: true, header_converters: :symbol, converters: :all)
+      data_as_hash = transform_column_values csv.to_a.map(&:to_hash).as_json
+      save_data data_as_hash
     end
 
-    def self.save_data(exoplanets_hash)
+    def self.save_data(data)
       ActiveRecord::Base.transaction do
-        exoplanets_hash.each do |key, values|
-          exoplanet = Exoplanet.find_or_initialize_by name: values["pl_hostname"]
-          exoplanet.update name: values["pl_hostname"], letter: values["pl_letter"], discovery_method: values["pl_discmethod"]
+        data.each do |datum|
+          exoplanet = find_or_initialize_by name: datum["name"]
+          exoplanet.update name: datum["name"], letter: datum["letter"], discovery_method: datum["discovery_method"]
         end
       end
     end
