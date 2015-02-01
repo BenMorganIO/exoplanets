@@ -11,12 +11,12 @@ class Exoplanet < ActiveRecord::Base
     data = data.map do |datum|
       datum.transform_keys! do |key|
         case key
-        when "pl_hostname"
-          "name"
-        when "pl_letter"
-          "letter"
-        when "pl_discmethod"
-          "discovery_method"
+        when 'pl_hostname'
+          'name'
+        when 'pl_letter'
+          'letter'
+        when 'pl_discmethod'
+          'discovery_method'
         else
           nil
         end
