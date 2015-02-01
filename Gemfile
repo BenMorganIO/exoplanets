@@ -18,7 +18,7 @@ gem 'puma'
 gem 'httparty'
 gem 'sidekiq'
 gem 'active_model_serializers', '~> 0.8.3'
-# gem 'kaminari'
+gem 'kaminari'
 # gem 'ransack'
 
 group :development do
