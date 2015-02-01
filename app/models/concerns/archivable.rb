@@ -27,7 +27,7 @@ module Archivable
         exoplanets_hash[row_uuid] = exoplanet_hash
       end
 
-      save_data exoplanets_hash
+      true if save_data exoplanets_hash
     end
 
     def self.save_data(exoplanets_hash)
