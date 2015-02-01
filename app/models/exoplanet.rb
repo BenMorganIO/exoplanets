@@ -1,9 +1,11 @@
 class Exoplanet < ActiveRecord::Base
   include Archivable
 
-  DISCOVERY_METHODS = ['Transit', 'Orbital Brightness Modulation',
-                       'Transit Timing Variations', 'Radial Velocity',
-                       'Imaging']
+  DISCOVERY_METHODS = ['Transit', 'Radial Velocity', 'Microlensing', 'Imaging',
+                       'Pulsar Timing', 'Pulsation Timing Variations',
+                       'Transit Timing Variations',
+                       'Orbital Brightness Modulation',
+                       'Eclipse Timing Variations', 'Astrometry']
 
   def self.transform_column_values(data)
     data = data.map do |datum|
