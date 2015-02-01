@@ -18,9 +18,17 @@ gem 'puma'
 gem 'httparty'
 gem 'sidekiq'
 gem 'active_model_serializers', '~> 0.8.3'
+# gem 'kaminari'
+# gem 'ransack'
 
 group :development do
   gem 'meta_request'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
