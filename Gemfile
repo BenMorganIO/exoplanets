@@ -20,6 +20,7 @@ gem 'sidekiq'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'kaminari'
 gem 'whenever', require: false
+gem 'responders', '~> 2.0'
 
 group :development do
   gem 'meta_request'
