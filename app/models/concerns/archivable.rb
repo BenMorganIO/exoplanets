@@ -9,7 +9,7 @@ module Archivable
       data = get '/nph-nstedAPI', query: { table: name.downcase.pluralize }
       csv = CSV.new(data, headers: true, header_converters: :symbol, converters: :all)
       data_as_hash = transform_column_values csv.to_a.map(&:to_hash).as_json
-      save_data data_as_hash
+      true if save_data data_as_hash
     end
 
     def self.save_data(data)
