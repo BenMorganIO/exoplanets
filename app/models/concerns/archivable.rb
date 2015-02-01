@@ -16,7 +16,7 @@ module Archivable
       ActiveRecord::Base.transaction do
         data.each do |datum|
           exoplanet = find_or_initialize_by name: datum["name"]
-          exoplanet.update name: datum["name"], letter: datum["letter"], discovery_method: datum["discovery_method"]
+          exoplanet.update_attributes datum
         end
       end
     end
