@@ -1,5 +1,5 @@
 module Api
-  class ExoplanetsController < ApplicationController
+  class ExoplanetsController < Api::BaseController
     def index
       render json: exoplanets
     end
