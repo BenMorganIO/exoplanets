@@ -1,12 +1,12 @@
 module Api
   class ExoplanetsController < Api::BaseController
     def index
-      render json: exoplanets
+      respond_with exoplanets
     end
 
     def show
       exoplanet = Exoplanet.find params[:id]
-      render json: exoplanet
+      respond_with exoplanet
     end
 
     private
