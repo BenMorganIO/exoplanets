@@ -14,6 +14,13 @@ describe Api::ExoplanetsController do
       end
     end
 
+    describe "per_page" do
+      it "will set the number of exoplanets listed" do
+        get :index, page: 1, per_page: 2
+        expect(JSON.parse(response.body)['exoplanets'].length).to eql 2
+      end
+    end
+
     describe "ids" do
       it "will list all exoplanets with given ids" do
         exoplanets.pop
