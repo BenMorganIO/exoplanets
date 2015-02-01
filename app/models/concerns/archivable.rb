@@ -12,7 +12,6 @@ module Archivable
       columns = eps_array.shift
       rows    = eps_array
 
-      print "Parsing the data"
       column_indexes = {}
       columns.each_with_index do |column, index|
         column_indexes[index] = column
@@ -26,11 +25,8 @@ module Archivable
           exoplanet_hash[column_indexes[index]] = data
         end
         exoplanets_hash[row_uuid] = exoplanet_hash
-        print '.' if row_index % 100 == 0 and row_index != 0
       end
-      puts ''
 
-      print "Saving the data..."
       ActiveRecord::Base.transaction do
         exoplanets_hash.each do |key, values|
           exoplanet = Exoplanet.find_or_initialize_by name: values["pl_hostname"]
