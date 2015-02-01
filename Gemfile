@@ -21,6 +21,7 @@ gem 'active_model_serializers', '~> 0.8.3'
 gem 'kaminari'
 gem 'whenever', require: false
 gem 'responders', '~> 2.0'
+gem 'as_csv'
 
 group :development do
   gem 'meta_request'
