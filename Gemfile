@@ -19,6 +19,7 @@ gem 'httparty'
 gem 'sidekiq'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'kaminari'
+gem 'whenever', require: false
 
 group :development do
   gem 'meta_request'
