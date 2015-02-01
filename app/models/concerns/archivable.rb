@@ -27,6 +27,10 @@ module Archivable
         exoplanets_hash[row_uuid] = exoplanet_hash
       end
 
+      save_data exoplanets_hash
+    end
+
+    def self.save_data(exoplanets_hash)
       ActiveRecord::Base.transaction do
         exoplanets_hash.each do |key, values|
           exoplanet = Exoplanet.find_or_initialize_by name: values["pl_hostname"]
